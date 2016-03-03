@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Function;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 03/03/2016.
@@ -18,7 +17,7 @@ public class ArrayListVersion {
     /**
      * The total run time of the program.
      */
-    private static long runTime;
+    private static long totalRunTime;
     /**
      * The list that will hold the random integers.
      */
@@ -26,14 +25,29 @@ public class ArrayListVersion {
 
     public static void main(String[] args) {
         getInput();
-        runTime = System.nanoTime();
-
         list = new ArrayList<>();
-        System.out.println("First: " + runTime / Math.pow(10, 9));
 
         getRandom();
-        System.out.println("List: " + list);
-        System.out.println(String.format("Run time: %d", runTime));
+        System.out.println("List elements: " + list + "\n\n");
+        System.out.println(String.format("Time elapsed to fill the list: %f seconds.",
+                totalRunTime / Math.pow(10, 9)));
+
+        Function<List<Integer>, Long> func =
+                list -> {
+                    long time = System.nanoTime();
+                    Collections.sort(list);
+                    return System.nanoTime() - time;
+                };
+
+        long time = func.apply(list);
+        System.out.println(String.format("Time elapsed to sort the list: %f seconds.",
+                time / Math.pow(10, 9)));
+        totalRunTime += time;
+
+        System.out.println(String.format("Total run time: %f seconds.\n\n",
+                totalRunTime / Math.pow(10, 9)));
+
+        System.out.println("Sorted list: " + list);
     }
 
     /**
@@ -51,18 +65,35 @@ public class ArrayListVersion {
      * Generate the random sequence of numbers.
      */
     public static void getRandom() {
-        runTime = System.nanoTime() - runTime;
-        System.out.println("Second: " + runTime / Math.pow(10, 9));
+        long time;
+        int counter = 1;
+        Map<Integer, Double> map = new TreeMap<>();
 
         while (list.size() < N) {
+            // 1- Start
+            time = System.nanoTime();
+            // 2- Generate
             int number = ThreadLocalRandom.current()
                     .nextInt(0, M);
-            System.out.println(number);
+            // 3- Check if prime
             if (isPrime(number)) {
+                // 4- Add
                 list.add(number);
-                runTime = System.nanoTime() - runTime;
+                // 5- Finish
+                time = System.nanoTime() - time;
+                totalRunTime += time;
+                // Save iteration count & time elapsed to map
+                map.put(counter, time / Math.pow(10, 9));
             }
+
+            counter++;
         }
+
+        System.out.println("\n**************************************");
+        System.out.println("Printing the results' map:\n");
+        map.forEach((k, v) ->
+                System.out.println(String.format("Iteration %d - Time elapsed: %f seconds.", k, v)));
+        System.out.println("\n**************************************");
     }
 
     /**
@@ -73,7 +104,7 @@ public class ArrayListVersion {
         if (number == 1)
             return false;
 
-        for (int i = 2; i < Math.sqrt(number); i++)
+        for (int i = 2; i <= Math.sqrt(number); i++)
             if (number % i == 0)
                 return false;
 
