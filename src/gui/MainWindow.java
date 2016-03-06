@@ -1,5 +1,7 @@
 package gui;
 
+import controllers.CenterController;
+import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -22,6 +24,8 @@ public class MainWindow extends Application {
      * The BorderPane assembling the components of the main UI.
      */
     private BorderPane mBorderPane;
+
+    public MainWindow() {}
 
     @Override
     public void start(Stage stage) throws Exception {

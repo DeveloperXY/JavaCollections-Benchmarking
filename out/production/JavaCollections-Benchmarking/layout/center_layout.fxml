@@ -14,8 +14,8 @@
             <children>
                 <Label layoutX="5.0" layoutY="38.0" prefHeight="66.0" prefWidth="165.0" text="The minimum capacity to be reached by the collections:" wrapText="true" />
                 <Label layoutX="5.0" layoutY="166.0" prefHeight="66.0" prefWidth="165.0" text="The upper bound of the numbers to be generated:" wrapText="true" />
-                <TextField layoutX="5.0" layoutY="104.0" prefHeight="25.0" prefWidth="165.0" promptText="N:" />
-                <TextField layoutX="5.0" layoutY="232.0" prefHeight="25.0" prefWidth="165.0" promptText="M:" />
+                <TextField fx:id="nField" layoutX="5.0" layoutY="104.0" prefHeight="25.0" prefWidth="165.0" promptText="N:" />
+                <TextField fx:id="mField" layoutX="5.0" layoutY="232.0" prefHeight="25.0" prefWidth="165.0" promptText="M:" />
                 <Button layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#onStart" prefHeight="38.0" prefWidth="114.0" text="Run" />
             </children>
         </AnchorPane>
