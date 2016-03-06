@@ -19,12 +19,11 @@ public class MainController {
      */
     private Stage mStage;
 
+    /**
+     * The menu item in charge of handling of toggling the fullscreen mode.
+     */
     @FXML
     private MenuItem fullscreenBtn;
-
-    public MainController() {
-        // Required no-args constructor
-    }
 
     public void setOwnerStage(Stage stage) {
         mStage = stage;
@@ -45,9 +44,14 @@ public class MainController {
             Platform.exit();
     }
 
+    /**
+     * Toggles the Fullscreen mode of the main window.
+     */
     @FXML
     private void onFullscreen() {
+        // Toggle fullscreen mode
         mStage.setFullScreen(!mStage.isFullScreen());
+        // Set the text of the Fullscreen menu item accordingly
         fullscreenBtn.setText(mStage.isFullScreen() ?
                 "Exit Fullscreen mode" : "Enter Fullscreen mode");
     }

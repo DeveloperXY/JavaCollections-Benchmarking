@@ -4,12 +4,12 @@ import gui.model.TaskReport;
 import gui.tasks.ArrayListTask;
 import gui.tasks.LinkedListTask;
 import gui.tasks.SetTask;
+import gui.windows.MainWindow;
+import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javafx.scene.control.*;
 
+import java.util.List;
 import java.util.StringJoiner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -21,10 +21,7 @@ import java.util.concurrent.FutureTask;
  */
 public class CenterController {
 
-    /**
-     * The owner stage.
-     */
-    private Stage mStage;
+    private CenterListener mListener;
 
     /**
      * The minimum capacity of elements to be reached by the collections.
@@ -43,8 +40,9 @@ public class CenterController {
     private int N;
     private int M;
 
-    public CenterController() {
-        // Required no-args constructor
+    @FXML
+    private void initialize() {
+
     }
 
     /**
@@ -125,7 +123,6 @@ public class CenterController {
         if (!"".equals(dialogMessage)) {
             // Something is wrong with the input, show an error dialog.
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.initOwner(mStage);
             alert.setTitle("Unable to proceed.");
             alert.setHeaderText("Please correct the invalid fields");
             alert.setContentText(dialogMessage);
@@ -136,5 +133,13 @@ public class CenterController {
         }
 
         return true;
+    }
+
+    public void setCenterListener(CenterListener listener) {
+        mListener = listener;
+    }
+
+    public interface CenterListener {
+        ObservableMap<String, List<Double>> getRecords();
     }
 }
