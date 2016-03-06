@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
- *
+ * <p>
  * The LinkedList version.
  */
 public class LinkedListTask extends BaseTask<List<Integer>>

@@ -44,15 +44,7 @@ public class CenterController {
     private int M;
 
     public CenterController() {
-    }
-
-    /**
-     * @param ownerStage that this controller manages.
-     *                   <p>
-     *                   Overloaded constrcutor.
-     */
-    public CenterController(Stage ownerStage) {
-        mStage = ownerStage;
+        // Required no-args constructor
     }
 
     /**
@@ -63,23 +55,27 @@ public class CenterController {
         statusArea.setText("Executing tasks...");
 
         if (isInputValid()) {
-            // Start the 3 tasks
+            // Create the 3 tasks
             ArrayListTask arraylistTask = new ArrayListTask(N, M);
             LinkedListTask linkedListTask = new LinkedListTask(N, M);
             SetTask setTask = new SetTask(N, M);
+
             FutureTask<TaskReport> futureArrayListTask = new FutureTask<>(arraylistTask);
             FutureTask<TaskReport> futureLinkedListTask = new FutureTask<>(linkedListTask);
             FutureTask<TaskReport> futureSetTask = new FutureTask<>(setTask);
 
+            // Execute the tasks
             ExecutorService executorService = Executors.newFixedThreadPool(3);
             executorService.execute(futureArrayListTask);
             executorService.execute(futureLinkedListTask);
             executorService.execute(futureSetTask);
 
+            // Get their reports
             TaskReport arraylistReport = futureArrayListTask.get();
             TaskReport linkedlistReport = futureLinkedListTask.get();
             TaskReport setReport = futureSetTask.get();
 
+            // Show the reports
             statusArea.setText(
                     new StringJoiner("\n")
                             .add(arraylistReport.fullReport())
@@ -88,11 +84,14 @@ public class CenterController {
                             .add(TaskReport.taskReportSeparator())
                             .add(setReport.fullReport())
                             .toString());
+            // Shut down the executor
             executorService.shutdown();
         }
     }
 
     /**
+     * @return true if the input is valid, false otherwise.
+     *
      * Validates the values of 'N' & 'M'.
      */
     private boolean isInputValid() {

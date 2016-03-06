@@ -1,5 +1,6 @@
 package gui.windows;
 
+import gui.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,6 +36,8 @@ public class MainWindow extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/gui/layout/main_window.fxml"));
         mBorderPane = loader.load();
+        MainController mainController = loader.getController();
+        mainController.setOwnerStage(mPrimaryStage);
     }
 
     private void addCenterLayout() throws IOException {

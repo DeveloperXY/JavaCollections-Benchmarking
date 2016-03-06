@@ -9,30 +9,41 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.CenterController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.CenterController">
     <items>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: lightblue;">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0"
+                    style="-fx-background-color: lightblue;">
             <children>
-                <Label layoutX="5.0" layoutY="38.0" prefHeight="66.0" prefWidth="165.0" text="The minimum capacity to be reached by the collections:" wrapText="true" />
-                <Label layoutX="5.0" layoutY="166.0" prefHeight="66.0" prefWidth="165.0" text="The upper bound of the numbers to be generated:" wrapText="true" />
-                <TextField fx:id="nField" layoutX="5.0" layoutY="104.0" prefHeight="25.0" prefWidth="165.0" promptText="N:" />
-                <TextField fx:id="mField" layoutX="5.0" layoutY="232.0" prefHeight="25.0" prefWidth="165.0" promptText="M:" />
-                <Button layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#onStart" prefHeight="38.0" prefWidth="114.0" text="Run" />
+                <Label layoutX="5.0" layoutY="38.0" prefHeight="66.0" prefWidth="165.0"
+                       text="The minimum capacity to be reached by the collections:" wrapText="true"/>
+                <Label layoutX="5.0" layoutY="166.0" prefHeight="66.0" prefWidth="165.0"
+                       text="The upper bound of the numbers to be generated:" wrapText="true"/>
+                <TextField fx:id="nField" layoutX="5.0" layoutY="104.0" prefHeight="25.0" prefWidth="165.0"
+                           promptText="N:"/>
+                <TextField fx:id="mField" layoutX="5.0" layoutY="232.0" prefHeight="25.0" prefWidth="165.0"
+                           promptText="M:"/>
+                <Button layoutX="31.0" layoutY="271.0" mnemonicParsing="false" onAction="#onStart" prefHeight="38.0"
+                        prefWidth="114.0" text="Run"/>
             </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
             <children>
-                <TableView layoutX="35.0" layoutY="14.0" prefHeight="263.0" prefWidth="417.0" tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <TableView layoutX="35.0" layoutY="14.0" prefHeight="263.0" prefWidth="417.0"
+                           tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                           AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ArrayList" />
-                        <TableColumn prefWidth="75.0" text="LinkedList" />
-                        <TableColumn prefWidth="75.0" text="Set" />
+                        <TableColumn prefWidth="75.0" text="ArrayList"/>
+                        <TableColumn prefWidth="75.0" text="LinkedList"/>
+                        <TableColumn prefWidth="75.0" text="Set"/>
                     </columns>
                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                     </columnResizePolicy>
                 </TableView>
-            <TextArea fx:id="statusArea" editable="false" layoutY="264.0" prefHeight="133.0" prefWidth="417.0" text="Ready.&#10;" />
+                <TextArea fx:id="statusArea" editable="false" layoutY="264.0" prefHeight="133.0" prefWidth="417.0"
+                          text="Ready.&#10;"/>
             </children>
         </AnchorPane>
     </items>

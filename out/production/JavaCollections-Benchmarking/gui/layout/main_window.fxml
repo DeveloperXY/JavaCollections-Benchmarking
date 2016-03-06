@@ -14,6 +14,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
                     </items>
                 </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                    <items>
+                        <MenuItem fx:id="fullscreenBtn" mnemonicParsing="false" onAction="#onFullscreen" text="Switch to FullScreen mode" />
+                    </items>
+                </Menu>
             </menus>
         </MenuBar>
     </top>

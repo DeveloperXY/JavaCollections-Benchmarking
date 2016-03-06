@@ -4,7 +4,6 @@ import gui.model.TaskReport;
 
 import java.util.*;
 import java.util.concurrent.Callable;
-import java.util.function.Function;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
