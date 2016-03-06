@@ -3,6 +3,7 @@ package gui.tasks;
 import gui.model.TaskReport;
 import utils.Utils;
 
+import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,7 @@ public class LinkedListTask extends BaseTask<List<Integer>>
         totalRunTime = fillTime;
 
         return new TaskReport(
+                LocalDateTime.now(),
                 LinkedList.class,
                 list,
                 map,

@@ -6,7 +6,17 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import utils.Utils;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -57,5 +67,14 @@ public class MainController {
         // Set the text of the Fullscreen menu item accordingly
         fullscreenBtn.setText(mStage.isFullScreen() ?
                 "Exit Fullscreen mode" : "Enter Fullscreen mode");
+    }
+
+    /**
+     * Invoked when the user clicks on the "View Logs" menu item.
+     */
+    @FXML
+    private void onViewLogs() throws IOException {
+        // View the logs file.
+        Desktop.getDesktop().open(new File(Utils.LOG_FILE_NAME));
     }
 }

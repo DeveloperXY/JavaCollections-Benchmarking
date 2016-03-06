@@ -2,6 +2,7 @@ package gui.tasks;
 
 import gui.model.TaskReport;
 
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -35,6 +36,7 @@ public class SetTask extends BaseTask<Set<Integer>>
         totalRunTime = fillTime + sortTime;
 
         return new TaskReport(
+                LocalDateTime.now(),
                 TreeSet.class,
                 set,
                 map,

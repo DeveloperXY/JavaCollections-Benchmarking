@@ -8,12 +8,21 @@ import gui.tasks.SetTask;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import utils.Utils;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import java.util.StringJoiner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
+import java.util.stream.Collectors;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
@@ -83,7 +92,7 @@ public class CenterController {
      * Invoked when the user clicks on the "Run" button.
      */
     @FXML
-    private void onStart() throws ExecutionException, InterruptedException {
+    private void onStart() throws ExecutionException, InterruptedException, IOException {
         statusArea.setText("Executing tasks...");
 
         if (isInputValid()) {
@@ -113,18 +122,39 @@ public class CenterController {
                     setReport.getTotalRunTime());
             mListener.getRecords().add(record);
 
+            // Scroll down to the last item after inserting it
+            recordTable.scrollTo(recordTable.getItems().size());
+
             // Show the reports
             statusArea.setText(
                     new StringJoiner("\n")
-                            .add(arraylistReport.fullReport())
+                            .add(arraylistReport.miniReport())
                             .add(TaskReport.taskReportSeparator())
-                            .add(linkedlistReport.fullReport())
+                            .add(linkedlistReport.miniReport())
                             .add(TaskReport.taskReportSeparator())
-                            .add(setReport.fullReport())
+                            .add(setReport.miniReport())
                             .toString());
+
+            logTheReports(arraylistReport, linkedlistReport, setReport);
+
             // Shut down the executor
             executorService.shutdown();
         }
+    }
+
+    /**
+     * @param reports to be logged
+     *                <p>
+     *                Logs the passed-in reports to a log text file.
+     */
+    private void logTheReports(TaskReport... reports) throws IOException {
+        Path file = Paths.get(Utils.LOG_FILE_NAME);
+        Files.write(file,
+                Arrays.asList(reports[0], reports[1], reports[2])
+                        .stream()
+                        .map(TaskReport::fullReport)
+                        .collect(Collectors.toList()),
+                Charset.forName("UTF-8"));
     }
 
     /**

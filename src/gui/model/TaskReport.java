@@ -1,8 +1,12 @@
 package gui.model;
 
+import java.io.File;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Map;
 import java.util.StringJoiner;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
@@ -43,13 +47,19 @@ public class TaskReport {
     private Double totalRunTime;
 
     private Class className;
+    /**
+     * The time this report was made.
+     */
+    private LocalDateTime time;
 
-    public TaskReport(Class className,
+    public TaskReport(LocalDateTime time,
+                      Class className,
                       Collection<Integer> generatedNumbers,
                       Map<Integer, Double> timingMap,
                       Double fillTime,
                       Double sortTime,
                       Double totalRunTime) {
+        this.time = time;
         this.className = className;
         this.generatedNumbers = generatedNumbers;
         this.timingMap = timingMap;
@@ -79,14 +89,37 @@ public class TaskReport {
     }
 
     /**
-     * @return a full report of the task results.
+     * @return a mini report of the task results, to be shown within the app.
      */
-    public String fullReport() {
+    public String miniReport() {
         return new StringJoiner("\n")
                 .add("***************************")
                 .add(String.format("Class:\t%s", className.getSimpleName()))
                 .add("***************************")
                 .add("Generated numbers: " + generatedNumbers)
+                .add(String.format("Total run time: %f seconds.", totalRunTime))
+                .toString();
+    }
+
+    /**
+     * @return a full report of this task describing all actions, all timings.
+     */
+    public String fullReport() {
+        return new StringJoiner(System.lineSeparator())
+                .add(Stream.generate(() -> "-")
+                        .limit(time.toString().length())
+                        .flatMap(Stream::of)
+                        .findAny()
+                        .get())
+                .add(time.toString())
+                .add(Stream.generate(() -> "-")
+                        .limit(time.toString().length())
+                        .findFirst()
+                        .get())
+                .add(String.format("Class :\t%s", className.getSimpleName()))
+                .add("Generated numbers: " + generatedNumbers)
+                .add(String.format("Fill time: %f seconds.", fillTime))
+                .add(String.format("Sort time: %f seconds.", sortTime))
                 .add(String.format("Total run time: %f seconds.", totalRunTime))
                 .toString();
     }

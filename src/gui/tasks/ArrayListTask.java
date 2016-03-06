@@ -2,6 +2,7 @@ package gui.tasks;
 
 import gui.model.TaskReport;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.function.Function;
@@ -42,6 +43,7 @@ public class ArrayListTask extends BaseTask<List<Integer>>
         totalRunTime = fillTime + sortTime;
 
         return new TaskReport(
+                LocalDateTime.now(),
                 ArrayList.class,
                 list,
                 map,
