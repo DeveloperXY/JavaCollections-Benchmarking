@@ -20,24 +20,47 @@ public class TaskReport {
      * -- A successful iteration is an iteration where the generated number
      * is a prime one.
      */
-    private Map<String, Double> timingMap;
+    private Map<Integer, Double> timingMap;
 
 
     /**
      * The duration of time that was needed to fill the collection that
      * the task uses.
      */
-    private Long fillTime;
+    private Double fillTime;
 
     /**
      * The duration of time that was needed to sort the collection that the task uses.
      * Could be @null if the collection wasn't sorted.
      */
-    private Long sortTime;
+    private Double sortTime;
 
     /**
      * The total run time of the task.
      * (Fill + Sort(if required) + Add to collection)
      */
     private Double totalRunTime;
+
+    public TaskReport(List<Integer> generatedNumbers,
+                      Map<Integer, Double> timingMap,
+                      Double fillTime,
+                      Double sortTime,
+                      Double totalRunTime) {
+        this.generatedNumbers = generatedNumbers;
+        this.timingMap = timingMap;
+        this.fillTime = fillTime;
+        this.sortTime = sortTime;
+        this.totalRunTime = totalRunTime;
+    }
+
+    @Override
+    public String toString() {
+        return "TaskReport{" +
+                "generatedNumbers=" + generatedNumbers +
+                ", timingMap=" + timingMap +
+                ", fillTime=" + fillTime +
+                ", sortTime=" + sortTime +
+                ", totalRunTime=" + totalRunTime +
+                '}';
+    }
 }

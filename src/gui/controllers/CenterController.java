@@ -1,9 +1,16 @@
 package gui.controllers;
 
+import gui.model.TaskReport;
+import gui.tasks.ArrayListTask;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
@@ -26,6 +33,9 @@ public class CenterController {
     @FXML
     private TextField mField;
 
+    private int N;
+    private int M;
+
     public CenterController() {
     }
 
@@ -42,21 +52,27 @@ public class CenterController {
      * Invoked when the user clicks on the "Run" button.
      */
     @FXML
-    private void onStart() {
-        validateInput();
+    private void onStart() throws ExecutionException, InterruptedException {
+        if (isInputValid()) {
+            // Start the 3 tasks
+            ArrayListTask task = new ArrayListTask(N, M);
+            FutureTask<TaskReport> futureTask1 = new FutureTask<>(task);
+
+            ExecutorService executorService = Executors.newFixedThreadPool(3);
+            executorService.execute(futureTask1);
+
+            System.out.println("Task result: " + futureTask1.get());
+            executorService.shutdown();
+        }
     }
 
     /**
      * Validates the values of 'N' & 'M'.
      */
-    private void validateInput() {
+    private boolean isInputValid() {
         String dialogMessage = "";
         String nString = nField.getText();
         String mString = mField.getText();
-
-        int n; // The integer value of 'N'
-        int m; // The integer value of 'M'
-        n = m = 0;
 
         if ("".equals(nString))
             dialogMessage += "Please specify the minimum number of elements per collection.\n";
@@ -66,7 +82,7 @@ public class CenterController {
         if ("".equals(dialogMessage)) {
             try {
                 // Try to convert the content of the nField
-                n = Integer.parseInt(nString);
+                N = Integer.parseInt(nString);
             } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "N must be an integer.\n";
@@ -74,7 +90,7 @@ public class CenterController {
 
             try {
                 // Try to convert the content of the mField
-                m = Integer.parseInt(mString);
+                M = Integer.parseInt(mString);
             } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "M must be an integer.\n";
@@ -90,6 +106,10 @@ public class CenterController {
             alert.setContentText(dialogMessage);
 
             alert.showAndWait();
+
+            return false;
         }
+
+        return true;
     }
 }
