@@ -30,13 +30,13 @@
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="300.0">
             <children>
-                <TableView layoutX="35.0" layoutY="14.0" prefHeight="263.0" prefWidth="417.0"
+                <TableView fx:id="recordTable" layoutX="35.0" layoutY="14.0" prefHeight="263.0" prefWidth="417.0"
                            tableMenuButtonVisible="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                            AnchorPane.topAnchor="0.0">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ArrayList"/>
-                        <TableColumn prefWidth="75.0" text="LinkedList"/>
-                        <TableColumn prefWidth="75.0" text="Set"/>
+                        <TableColumn fx:id="arraylistColumn" prefWidth="75.0" text="ArrayList"/>
+                        <TableColumn fx:id="linkedlistColumn" prefWidth="75.0" text="LinkedList"/>
+                        <TableColumn fx:id="setColumn" prefWidth="75.0" text="Set"/>
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>

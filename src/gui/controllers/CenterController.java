@@ -1,15 +1,14 @@
 package gui.controllers;
 
+import gui.model.Record;
 import gui.model.TaskReport;
 import gui.tasks.ArrayListTask;
 import gui.tasks.LinkedListTask;
 import gui.tasks.SetTask;
-import gui.windows.MainWindow;
-import javafx.collections.ObservableMap;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.util.List;
 import java.util.StringJoiner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -21,7 +20,19 @@ import java.util.concurrent.FutureTask;
  */
 public class CenterController {
 
+    /**
+     * A MainWindow listener on this controller.
+     */
     private CenterListener mListener;
+
+    @FXML
+    private TableView<Record> recordTable;
+    @FXML
+    private TableColumn<Record, String> arraylistColumn;
+    @FXML
+    private TableColumn<Record, String> linkedlistColumn;
+    @FXML
+    private TableColumn<Record, String> setColumn;
 
     /**
      * The minimum capacity of elements to be reached by the collections.
@@ -40,9 +51,16 @@ public class CenterController {
     private int N;
     private int M;
 
+    public CenterController() {}
+
     @FXML
     private void initialize() {
-
+        arraylistColumn.setCellValueFactory(cellData ->
+                cellData.getValue().arrayListProperty());
+        linkedlistColumn.setCellValueFactory(cellData ->
+                cellData.getValue().linkedlistProperty());
+        setColumn.setCellValueFactory(cellData ->
+                cellData.getValue().setProperty());
     }
 
     /**
@@ -89,7 +107,7 @@ public class CenterController {
 
     /**
      * @return true if the input is valid, false otherwise.
-     *
+     * <p>
      * Validates the values of 'N' & 'M'.
      */
     private boolean isInputValid() {
@@ -137,9 +155,11 @@ public class CenterController {
 
     public void setCenterListener(CenterListener listener) {
         mListener = listener;
+        recordTable.setItems(mListener.getRecords());
     }
 
+    @FunctionalInterface
     public interface CenterListener {
-        ObservableMap<String, List<Double>> getRecords();
+        ObservableList<Record> getRecords();
     }
 }

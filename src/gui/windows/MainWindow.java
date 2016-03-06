@@ -2,9 +2,10 @@ package gui.windows;
 
 import gui.controllers.CenterController;
 import gui.controllers.MainController;
+import gui.model.Record;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableMap;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
@@ -12,7 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
@@ -28,12 +28,12 @@ public class MainWindow extends Application {
      */
     private BorderPane mBorderPane;
 
-    private ObservableMap<String, List<Double>> mRecords;
+    private ObservableList<Record> mRecords;
 
     @Override
     public void start(Stage stage) throws Exception {
         mPrimaryStage = stage;
-        mRecords = FXCollections.observableHashMap();
+        mRecords = FXCollections.observableArrayList();
 
         initMainWindow();
         addCenterLayout();

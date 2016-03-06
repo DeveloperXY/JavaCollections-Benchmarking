@@ -1,29 +1,44 @@
 package gui.model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
  */
 public class Record {
-    private double arraylistStat;
-    private double linkedlistStat;
-    private double setStat;
+    private StringProperty arraylistStat;
+    private StringProperty linkedlistStat;
+    private StringProperty setStat;
 
     public Record(double arraylistStat, double linkedlistStat, double setStat) {
-        this.arraylistStat = arraylistStat;
-        this.linkedlistStat = linkedlistStat;
-        this.setStat = setStat;
+        this.arraylistStat = new SimpleStringProperty(arraylistStat + "s");
+        this.linkedlistStat = new SimpleStringProperty(linkedlistStat + "s");
+        this.setStat = new SimpleStringProperty(setStat + "s");
     }
 
-    public double getArraylistStat() {
+    public StringProperty arrayListProperty() {
         return arraylistStat;
     }
 
-    public double getLinkedlistStat() {
+    public StringProperty linkedlistProperty() {
         return linkedlistStat;
     }
 
-    public double getSetStat() {
+    public StringProperty setProperty() {
         return setStat;
+    }
+
+    public String getArraylistStat() {
+        return arraylistStat.get();
+    }
+
+    public String getLinkedlistStat() {
+        return linkedlistStat.get();
+    }
+
+    public String getSetStat() {
+        return setStat.get();
     }
 
     @Override

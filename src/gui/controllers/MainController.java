@@ -29,6 +29,8 @@ public class MainController {
         mStage = stage;
     }
 
+    public MainController() {}
+
     /**
      * Closes the app, when clicking on the "Close" menu item.
      */
