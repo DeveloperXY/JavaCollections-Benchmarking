@@ -6,17 +6,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import sun.security.krb5.internal.crypto.Des;
 import utils.Utils;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Optional;
 
 /**
@@ -79,6 +78,7 @@ public class MainController {
         if (file.exists())
             Desktop.getDesktop().open(file);
         else {
+            // The log file was not found
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
             alert.setHeaderText("Log file not found.");
@@ -86,6 +86,33 @@ public class MainController {
                     "your log file & that it truly exists.");
 
             alert.showAndWait();
+        }
+    }
+
+    /**
+     * Invoked when the user clicks on the "Source code" menu item.
+     */
+    @FXML
+    private void onViewSource() throws MalformedURLException {
+        openWebpage(new URL("https://github.com/DeveloperXY/JavaCollections-Benchmarking"));
+    }
+
+    public static void openWebpage(URI uri) {
+        Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+        if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+            try {
+                desktop.browse(uri);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void openWebpage(URL url) {
+        try {
+            openWebpage(url.toURI());
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
         }
     }
 }

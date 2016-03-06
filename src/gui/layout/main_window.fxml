@@ -17,9 +17,14 @@
                 <Menu mnemonicParsing="false" text="Options">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onViewLogs" text="View logs" />
-                  <MenuItem fx:id="fullscreenBtn" mnemonicParsing="false" onAction="#onFullscreen" text="Switch to FullScreen mode" />
+                        <MenuItem fx:id="fullscreenBtn" mnemonicParsing="false" onAction="#onFullscreen" text="Switch to FullScreen mode" />
                     </items>
                 </Menu>
+            <Menu mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onViewSource" text="Source code..." />
+               </items>
+            </Menu>
             </menus>
         </MenuBar>
     </top>
