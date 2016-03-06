@@ -189,6 +189,9 @@ public class CenterController {
             }
         }
 
+        if (M == 0)
+            dialogMessage += "The value of 'M' should be different than 0.";
+
         if (!"".equals(dialogMessage)) {
             // Something is wrong with the input, show an error dialog.
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -197,7 +200,7 @@ public class CenterController {
             alert.setContentText(dialogMessage);
 
             alert.showAndWait();
-
+            statusArea.setText("Ready.");
             return false;
         }
 
