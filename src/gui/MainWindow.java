@@ -25,8 +25,6 @@ public class MainWindow extends Application {
      */
     private BorderPane mBorderPane;
 
-    public MainWindow() {}
-
     @Override
     public void start(Stage stage) throws Exception {
         mPrimaryStage = stage;

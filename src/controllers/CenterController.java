@@ -26,8 +26,14 @@ public class CenterController {
     @FXML
     private TextField mField;
 
-    public CenterController() {}
+    public CenterController() {
+    }
 
+    /**
+     * @param ownerStage that this controller manages.
+     *                   <p>
+     *                   Overloaded constrcutor.
+     */
     public CenterController(Stage ownerStage) {
         mStage = ownerStage;
     }
@@ -40,6 +46,9 @@ public class CenterController {
         validateInput();
     }
 
+    /**
+     * Validates the values of 'N' & 'M'.
+     */
     private void validateInput() {
         String dialogMessage = "";
         String nString = nField.getText();
@@ -58,8 +67,7 @@ public class CenterController {
             try {
                 // Try to convert the content of the nField
                 n = Integer.parseInt(nString);
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "N must be an integer.\n";
             }
@@ -67,8 +75,7 @@ public class CenterController {
             try {
                 // Try to convert the content of the mField
                 m = Integer.parseInt(mString);
-            }
-            catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "M must be an integer.\n";
             }
