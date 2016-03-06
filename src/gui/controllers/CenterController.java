@@ -4,6 +4,7 @@ import gui.model.TaskReport;
 import gui.tasks.ArrayListTask;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -33,6 +34,9 @@ public class CenterController {
     @FXML
     private TextField mField;
 
+    @FXML
+    private TextArea statusArea;
+
     private int N;
     private int M;
 
@@ -53,6 +57,8 @@ public class CenterController {
      */
     @FXML
     private void onStart() throws ExecutionException, InterruptedException {
+        statusArea.setText("Executing tasks...");
+
         if (isInputValid()) {
             // Start the 3 tasks
             ArrayListTask task = new ArrayListTask(N, M);
@@ -61,7 +67,8 @@ public class CenterController {
             ExecutorService executorService = Executors.newFixedThreadPool(3);
             executorService.execute(futureTask1);
 
-            System.out.println("Task result: " + futureTask1.get());
+            TaskReport report1 = futureTask1.get();
+            statusArea.setText("ArrayList sequence: " + report1.getGeneratedNumbers());
             executorService.shutdown();
         }
     }

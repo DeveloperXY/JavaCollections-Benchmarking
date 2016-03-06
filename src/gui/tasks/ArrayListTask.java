@@ -1,11 +1,9 @@
 package gui.tasks;
 
 import gui.model.TaskReport;
-import utils.Utils;
 
 import java.util.*;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 
 /**
@@ -13,20 +11,15 @@ import java.util.function.Function;
  * <p>
  * The ArrayList version.
  */
-public class ArrayListTask implements Callable<TaskReport> {
-
-    private int N;
-    private int M;
+public class ArrayListTask extends BaseTask<List<Integer>>
+        implements Callable<TaskReport> {
 
     public ArrayListTask(int n, int m) {
-        N = n;
-        M = m;
+        super(n, m);
     }
 
     @Override
     public TaskReport call() throws Exception {
-        long timeCounter, tmp = 0;
-        int counter = 1;
         double fillTime = 0;
         double sortTime = 0;
         double totalRunTime = 0;
@@ -34,20 +27,7 @@ public class ArrayListTask implements Callable<TaskReport> {
         List<Integer> list = new ArrayList<>();
 
         // 1- Calculate the fill time
-        while (list.size() < N) {
-            timeCounter = System.nanoTime();
-            int number = ThreadLocalRandom.current()
-                    .nextInt(0, M);
-            if (Utils.isPrime(number)) {
-                list.add(number);
-                timeCounter = System.nanoTime() - timeCounter;
-                tmp += timeCounter;
-                map.put(counter, timeCounter / Math.pow(10, 9));
-            }
-            counter++;
-        }
-
-        fillTime = tmp / Math.pow(10, 9);
+        fillTime = getFillTime(list, map);
 
         // 2- Calculate the sort time
         Function<List<Integer>, Long> func =

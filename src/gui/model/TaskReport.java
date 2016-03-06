@@ -53,6 +53,26 @@ public class TaskReport {
         this.totalRunTime = totalRunTime;
     }
 
+    public List<Integer> getGeneratedNumbers() {
+        return generatedNumbers;
+    }
+
+    public Map<Integer, Double> getTimingMap() {
+        return timingMap;
+    }
+
+    public Double getFillTime() {
+        return fillTime;
+    }
+
+    public Double getSortTime() {
+        return sortTime;
+    }
+
+    public Double getTotalRunTime() {
+        return totalRunTime;
+    }
+
     @Override
     public String toString() {
         return "TaskReport{" +
