@@ -2,12 +2,15 @@ package gui.tasks;
 
 import gui.model.TaskReport;
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.Callable;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
- *
+ * <p>
  * The Set version.
  */
 public class SetTask extends BaseTask<Set<Integer>>

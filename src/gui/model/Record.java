@@ -12,9 +12,12 @@ public class Record {
     private StringProperty setStat;
 
     public Record(double arraylistStat, double linkedlistStat, double setStat) {
-        this.arraylistStat = new SimpleStringProperty(arraylistStat + "s");
-        this.linkedlistStat = new SimpleStringProperty(linkedlistStat + "s");
-        this.setStat = new SimpleStringProperty(setStat + "s");
+        this.arraylistStat = new SimpleStringProperty(
+                String.format("%fs", arraylistStat));
+        this.linkedlistStat = new SimpleStringProperty(
+                String.format("%fs", linkedlistStat));
+        this.setStat = new SimpleStringProperty(
+                String.format("%fs", setStat));
     }
 
     public StringProperty arrayListProperty() {
@@ -27,18 +30,6 @@ public class Record {
 
     public StringProperty setProperty() {
         return setStat;
-    }
-
-    public String getArraylistStat() {
-        return arraylistStat.get();
-    }
-
-    public String getLinkedlistStat() {
-        return linkedlistStat.get();
-    }
-
-    public String getSetStat() {
-        return setStat.get();
     }
 
     @Override

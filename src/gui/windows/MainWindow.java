@@ -28,6 +28,9 @@ public class MainWindow extends Application {
      */
     private BorderPane mBorderPane;
 
+    /**
+     * The records of the TableView.
+     */
     private ObservableList<Record> mRecords;
 
     @Override
@@ -55,6 +58,7 @@ public class MainWindow extends Application {
         SplitPane splitPane = loader.load();
         mBorderPane.setCenter(splitPane);
 
+        // Set a listener on the CenterController
         CenterController centerController = loader.getController();
         centerController.setCenterListener(() -> mRecords);
     }

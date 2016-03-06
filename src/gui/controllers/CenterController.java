@@ -25,12 +25,24 @@ public class CenterController {
      */
     private CenterListener mListener;
 
+    /**
+     * The main TableView of the app.
+     */
     @FXML
     private TableView<Record> recordTable;
+    /**
+     * The ArrayList column.
+     */
     @FXML
     private TableColumn<Record, String> arraylistColumn;
+    /**
+     * The LinkedList column.
+     */
     @FXML
     private TableColumn<Record, String> linkedlistColumn;
+    /**
+     * The Set column.
+     */
     @FXML
     private TableColumn<Record, String> setColumn;
 
@@ -45,13 +57,17 @@ public class CenterController {
     @FXML
     private TextField mField;
 
+    /**
+     * The status area TextArea, down to the right.
+     */
     @FXML
     private TextArea statusArea;
 
     private int N;
     private int M;
 
-    public CenterController() {}
+    public CenterController() {
+    }
 
     @FXML
     private void initialize() {
@@ -90,6 +106,12 @@ public class CenterController {
             TaskReport arraylistReport = futureArrayListTask.get();
             TaskReport linkedlistReport = futureLinkedListTask.get();
             TaskReport setReport = futureSetTask.get();
+
+            // Add record to the TableView
+            Record record = new Record(arraylistReport.getTotalRunTime(),
+                    linkedlistReport.getTotalRunTime(),
+                    setReport.getTotalRunTime());
+            mListener.getRecords().add(record);
 
             // Show the reports
             statusArea.setText(

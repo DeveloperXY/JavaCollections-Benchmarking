@@ -18,6 +18,11 @@ public abstract class BaseTask<T extends Collection<Integer>> {
         M = m;
     }
 
+    /**
+     * @param collection in question
+     * @param map        where the timing of each iteration will be saved.
+     * @return the time needed to fill the collection.
+     */
     public double getFillTime(T collection, Map<Integer, Double> map) {
         long timeCounter, fillTime = 0;
         int counter = 1;
