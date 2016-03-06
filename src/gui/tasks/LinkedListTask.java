@@ -1,4 +1,4 @@
-package tasks;
+package gui.tasks;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.

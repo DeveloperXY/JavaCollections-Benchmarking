@@ -1,7 +1,5 @@
 package gui;
 
-import controllers.CenterController;
-import controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,13 +33,13 @@ public class MainWindow extends Application {
 
     private void initMainWindow() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/layout/main_window.fxml"));
+        loader.setLocation(getClass().getResource("/gui/layout/main_window.fxml"));
         mBorderPane = loader.load();
     }
 
     private void addCenterLayout() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/layout/center_layout.fxml"));
+        loader.setLocation(getClass().getResource("/gui/layout/center_layout.fxml"));
         SplitPane splitPane = loader.load();
 
         mBorderPane.setCenter(splitPane);

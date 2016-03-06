@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e58f75cf-d0e8-4ed2-9e89-076d38c3469c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tasks/ArrayListTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tasks/LinkedListTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tasks/SetTask.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JavaCollections-Benchmarking/layout/center_layout.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/JavaCollections-Benchmarking/layout/main_window.fxml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/CenterController.java" afterPath="$PROJECT_DIR$/src/gui/controllers/CenterController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/gui/controllers/MainController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/layout/center_layout.fxml" afterPath="$PROJECT_DIR$/src/gui/layout/center_layout.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/layout/main_window.fxml" afterPath="$PROJECT_DIR$/src/gui/layout/main_window.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/tasks/ArrayListTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/tasks/LinkedListTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/tasks/SetTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/SetTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/CenterController.java" afterPath="$PROJECT_DIR$/src/controllers/CenterController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/MainWindow.java" afterPath="$PROJECT_DIR$/src/gui/MainWindow.java" />
     </list>
     <ignored path="JavaCollections-Benchmarking.iws" />
@@ -45,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,7 +59,7 @@
         </entry>
       </file>
       <file leaf-file-name="ArrayListTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tasks/ArrayListTask.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
@@ -64,7 +69,7 @@
         </entry>
       </file>
       <file leaf-file-name="LinkedListTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tasks/LinkedListTask.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
@@ -74,31 +79,31 @@
         </entry>
       </file>
       <file leaf-file-name="SetTask.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tasks/SetTask.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/tasks/SetTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1980198">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.31683168">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#323#324#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="center_layout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/center_layout.fxml">
+        <entry file="file://$PROJECT_DIR$/src/gui/layout/center_layout.fxml">
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="10.181818">
               <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
@@ -111,16 +116,16 @@
         </entry>
       </file>
       <file leaf-file-name="CenterController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/CenterController.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/controllers/CenterController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#817#818#0" expanded="true" />
-                <element signature="e#930#931#0" expanded="true" />
-                <element signature="e#961#962#0" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,7 +142,7 @@
         </entry>
       </file>
       <file leaf-file-name="main_window.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/layout/main_window.fxml">
+        <entry file="file://$PROJECT_DIR$/src/gui/layout/main_window.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.967742">
               <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
@@ -188,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/tasks/ArrayListTask.java" />
         <option value="$PROJECT_DIR$/src/tasks/LinkedListTask.java" />
         <option value="$PROJECT_DIR$/src/tasks/SetTask.java" />
+        <option value="$PROJECT_DIR$/src/gui/tasks/SetTask.java" />
       </list>
     </option>
   </component>
@@ -257,100 +263,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tasks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaCollections-Benchmarking" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="console" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -908,16 +820,16 @@
       <workItem from="1457131989081" duration="471000" />
       <workItem from="1457263158706" duration="144000" />
       <workItem from="1457263726701" duration="1031000" />
-      <workItem from="1457264784302" duration="4226000" />
+      <workItem from="1457264784302" duration="4366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13094000" />
+    <option name="totallyTimeSpent" value="13234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -929,7 +841,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47634068" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="1" y="1" width="1362" height="723" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22401172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22401172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -990,7 +902,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/main_window.fxml">
+    <entry file="file://$PROJECT_DIR$/src/gui/layout/main_window.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
@@ -1196,7 +1108,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/main_window.fxml">
+    <entry file="file://$PROJECT_DIR$/src/gui/layout/main_window.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.967742">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
@@ -1227,7 +1139,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layout/center_layout.fxml">
+    <entry file="file://$PROJECT_DIR$/src/gui/layout/center_layout.fxml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="10.181818">
           <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
@@ -1238,14 +1150,14 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1261,7 +1173,7 @@
     <entry file="file://$PROJECT_DIR$/src/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1276,21 +1188,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/CenterController.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/controllers/CenterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#930#931#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/ArrayListTask.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
@@ -1298,7 +1210,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/LinkedListTask.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
@@ -1306,10 +1218,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/SetTask.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/tasks/SetTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1980198">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.31683168">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
