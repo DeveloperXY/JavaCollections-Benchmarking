@@ -63,6 +63,7 @@ public class LinkedListVersion {
             if (Utils.isPrime(number)) {
                 // Add & sort
                 list.add(number);
+                // TODO: good old sorting algorithm
                 Collections.sort(list);
 
                 time = System.nanoTime() - time;
