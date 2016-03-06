@@ -20,9 +20,9 @@ public class ArrayListTask extends BaseTask<List<Integer>>
 
     @Override
     public TaskReport call() throws Exception {
-        double fillTime = 0;
-        double sortTime = 0;
-        double totalRunTime = 0;
+        double fillTime;
+        double sortTime;
+        double totalRunTime;
         Map<Integer, Double> map = new TreeMap<>();
         List<Integer> list = new ArrayList<>();
 

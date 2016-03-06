@@ -1,5 +1,6 @@
 package gui.model;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
@@ -12,9 +13,9 @@ import java.util.StringJoiner;
  */
 public class TaskReport {
     /**
-     * The list of the prime, randomly generated numbers by the task.
+     * The Collection of the prime, randomly generated numbers by the task.
      */
-    private List<Integer> generatedNumbers;
+    private Collection<Integer> generatedNumbers;
 
     /**
      * A map containing the timing of each "successful" iteration.
@@ -45,7 +46,7 @@ public class TaskReport {
     private Class className;
 
     public TaskReport(Class className,
-                      List<Integer> generatedNumbers,
+                      Collection<Integer> generatedNumbers,
                       Map<Integer, Double> timingMap,
                       Double fillTime,
                       Double sortTime,
@@ -58,7 +59,7 @@ public class TaskReport {
         this.totalRunTime = totalRunTime;
     }
 
-    public List<Integer> getGeneratedNumbers() {
+    public Collection<Integer> getGeneratedNumbers() {
         return generatedNumbers;
     }
 

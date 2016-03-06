@@ -3,6 +3,7 @@ package gui.controllers;
 import gui.model.TaskReport;
 import gui.tasks.ArrayListTask;
 import gui.tasks.LinkedListTask;
+import gui.tasks.SetTask;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
@@ -65,21 +66,27 @@ public class CenterController {
             // Start the 3 tasks
             ArrayListTask arraylistTask = new ArrayListTask(N, M);
             LinkedListTask linkedListTask = new LinkedListTask(N, M);
+            SetTask setTask = new SetTask(N, M);
             FutureTask<TaskReport> futureArrayListTask = new FutureTask<>(arraylistTask);
             FutureTask<TaskReport> futureLinkedListTask = new FutureTask<>(linkedListTask);
+            FutureTask<TaskReport> futureSetTask = new FutureTask<>(setTask);
 
             ExecutorService executorService = Executors.newFixedThreadPool(3);
             executorService.execute(futureArrayListTask);
             executorService.execute(futureLinkedListTask);
+            executorService.execute(futureSetTask);
 
             TaskReport arraylistReport = futureArrayListTask.get();
             TaskReport linkedlistReport = futureLinkedListTask.get();
+            TaskReport setReport = futureSetTask.get();
 
             statusArea.setText(
                     new StringJoiner("\n")
                             .add(arraylistReport.fullReport())
                             .add(TaskReport.taskReportSeparator())
                             .add(linkedlistReport.fullReport())
+                            .add(TaskReport.taskReportSeparator())
+                            .add(setReport.fullReport())
                             .toString());
             executorService.shutdown();
         }
