@@ -60,15 +60,24 @@ public class LinkedListVersion {
         int counter = 1;
         Map<Integer, Double> map = new TreeMap<>();
 
-        while (list.size() < N) {
+        /*while (list.size() < N) {
             time = System.nanoTime();
             int number = ThreadLocalRandom.current()
                     .nextInt(0, M);
             if (Utils.isPrime(number)) {
-                // Add & sort
-                list.add(number);
-                // TODO: good old sorting algorithm
-                Collections.sort(list);
+                if (list.size() == 0) {
+                    list.add(number);
+                } else if (list.get(0) > number) {
+                    list.add(0, number);
+                } else if (list.get(list.size() - 1) < number) {
+                    list.add(list.size(), number);
+                } else {
+                    int i = 0;
+                    while (list.get(i) < number) {
+                        i++;
+                    }
+                    list.add(i, number);
+                }
 
                 time = System.nanoTime() - time;
                 totalRunTime += time;
@@ -76,7 +85,7 @@ public class LinkedListVersion {
             }
 
             counter++;
-        }
+        }*/
 
         printDashboardMap(map);
     }
