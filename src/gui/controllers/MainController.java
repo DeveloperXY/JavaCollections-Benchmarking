@@ -75,6 +75,17 @@ public class MainController {
     @FXML
     private void onViewLogs() throws IOException {
         // View the logs file.
-        Desktop.getDesktop().open(new File(Utils.LOG_FILE_NAME));
+        File file = new File(Utils.LOG_FILE_NAME);
+        if (file.exists())
+            Desktop.getDesktop().open(file);
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Log file not found.");
+            alert.setContentText("Please make sure that you have saved " +
+                    "your log file & that it truly exists.");
+
+            alert.showAndWait();
+        }
     }
 }
