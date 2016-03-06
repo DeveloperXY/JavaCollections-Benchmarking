@@ -75,7 +75,7 @@ public class ArrayListVersion {
         int counter = 1;
         Map<Integer, Double> map = new TreeMap<>();
 
-        while (list.size() < N) {
+        /*while (list.size() < N) {
             // 1- Start
             time = System.nanoTime();
             // 2- Generate
@@ -93,7 +93,7 @@ public class ArrayListVersion {
             }
 
             counter++;
-        }
+        }*/
 
         printDashboardMap(map);
     }

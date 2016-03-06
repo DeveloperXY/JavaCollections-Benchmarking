@@ -2,6 +2,7 @@ package gui.model;
 
 import java.util.List;
 import java.util.Map;
+import java.util.StringJoiner;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
@@ -41,11 +42,15 @@ public class TaskReport {
      */
     private Double totalRunTime;
 
-    public TaskReport(List<Integer> generatedNumbers,
+    private Class className;
+
+    public TaskReport(Class className,
+                      List<Integer> generatedNumbers,
                       Map<Integer, Double> timingMap,
                       Double fillTime,
                       Double sortTime,
                       Double totalRunTime) {
+        this.className = className;
         this.generatedNumbers = generatedNumbers;
         this.timingMap = timingMap;
         this.fillTime = fillTime;
@@ -71,6 +76,26 @@ public class TaskReport {
 
     public Double getTotalRunTime() {
         return totalRunTime;
+    }
+
+    /**
+     * @return a full report of the task results.
+     */
+    public String fullReport() {
+        return new StringJoiner("\n")
+                .add("***************************")
+                .add(String.format("Class:\t%s", className.getSimpleName()))
+                .add("***************************")
+                .add("Generated numbers: " + generatedNumbers)
+                .add(String.format("Total run time: %f seconds.", totalRunTime))
+                .toString();
+    }
+
+    /**
+     * @return a string separator between task reports.
+     */
+    public static String taskReportSeparator() {
+        return "\n\n\n";
     }
 
     @Override

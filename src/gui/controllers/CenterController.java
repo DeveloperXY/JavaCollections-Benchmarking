@@ -2,12 +2,14 @@ package gui.controllers;
 
 import gui.model.TaskReport;
 import gui.tasks.ArrayListTask;
+import gui.tasks.LinkedListTask;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.StringJoiner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -61,14 +63,24 @@ public class CenterController {
 
         if (isInputValid()) {
             // Start the 3 tasks
-            ArrayListTask task = new ArrayListTask(N, M);
-            FutureTask<TaskReport> futureTask1 = new FutureTask<>(task);
+            ArrayListTask arraylistTask = new ArrayListTask(N, M);
+            LinkedListTask linkedListTask = new LinkedListTask(N, M);
+            FutureTask<TaskReport> futureArrayListTask = new FutureTask<>(arraylistTask);
+            FutureTask<TaskReport> futureLinkedListTask = new FutureTask<>(linkedListTask);
 
             ExecutorService executorService = Executors.newFixedThreadPool(3);
-            executorService.execute(futureTask1);
+            executorService.execute(futureArrayListTask);
+            executorService.execute(futureLinkedListTask);
 
-            TaskReport report1 = futureTask1.get();
-            statusArea.setText("ArrayList sequence: " + report1.getGeneratedNumbers());
+            TaskReport arraylistReport = futureArrayListTask.get();
+            TaskReport linkedlistReport = futureLinkedListTask.get();
+
+            statusArea.setText(
+                    new StringJoiner("\n")
+                            .add(arraylistReport.fullReport())
+                            .add(TaskReport.taskReportSeparator())
+                            .add(linkedlistReport.fullReport())
+                            .toString());
             executorService.shutdown();
         }
     }

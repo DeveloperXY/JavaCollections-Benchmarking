@@ -42,6 +42,7 @@ public class ArrayListTask extends BaseTask<List<Integer>>
         totalRunTime = fillTime + sortTime;
 
         return new TaskReport(
+                ArrayList.class,
                 list,
                 map,
                 fillTime,

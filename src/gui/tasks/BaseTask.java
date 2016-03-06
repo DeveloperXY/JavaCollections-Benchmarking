@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * Created by Mohammed Aouf ZOUAG on 06/03/2016.
  */
-public class BaseTask<T extends Collection<Integer>> {
+public abstract class BaseTask<T extends Collection<Integer>> {
     protected int N;
     protected int M;
 
