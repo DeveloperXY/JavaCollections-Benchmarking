@@ -1,14 +1,19 @@
+package console;
+
+import utils.Utils;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Function;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 03/03/2016.
  * <p>
- * The LinkedList version of the program.
+ * The ArrayList version of the program.
  */
-public class LinkedListVersion {
+public class ArrayListVersion {
     /**
-     * The limit number of elements to be contained within the LinkedList.
+     * The limit number of elements to be contained within the List.
      */
     private static int N;
     /**
@@ -20,21 +25,35 @@ public class LinkedListVersion {
      */
     private static long totalRunTime;
     /**
-     * The linked list that will hold the random integers.
+     * The list that will hold the random integers.
      */
     private static List<Integer> list;
 
     public static void main(String[] args) {
         getInput();
-        list = new LinkedList<>();
+        list = new ArrayList<>();
 
         getRandom();
-        System.out.println("Linked list elements: " + list + "\n\n");
-        System.out.println(String.format("Time elapsed to fill the linked list: %f seconds.",
+        System.out.println("List elements: " + list + "\n\n");
+        System.out.println(String.format("Time elapsed to fill the list: %f seconds.",
                 totalRunTime / Math.pow(10, 9)));
+
+        Function<List<Integer>, Long> func =
+                list -> {
+                    long time = System.nanoTime();
+                    Collections.sort(list);
+                    return System.nanoTime() - time;
+                };
+
+        long time = func.apply(list);
+        System.out.println(String.format("Time elapsed to sort the list: %f seconds.",
+                time / Math.pow(10, 9)));
+        totalRunTime += time;
 
         System.out.println(String.format("Total run time: %f seconds.\n\n",
                 totalRunTime / Math.pow(10, 9)));
+
+        System.out.println("Sorted list: " + list);
     }
 
     /**
@@ -57,17 +76,19 @@ public class LinkedListVersion {
         Map<Integer, Double> map = new TreeMap<>();
 
         while (list.size() < N) {
+            // 1- Start
             time = System.nanoTime();
+            // 2- Generate
             int number = ThreadLocalRandom.current()
                     .nextInt(0, M);
+            // 3- Check if prime
             if (Utils.isPrime(number)) {
-                // Add & sort
+                // 4- Add
                 list.add(number);
-                // TODO: good old sorting algorithm
-                Collections.sort(list);
-
+                // 5- Finish
                 time = System.nanoTime() - time;
                 totalRunTime += time;
+                // Save iteration count & time elapsed to map
                 map.put(counter, time / Math.pow(10, 9));
             }
 

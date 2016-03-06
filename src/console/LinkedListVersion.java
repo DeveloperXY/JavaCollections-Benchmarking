@@ -1,14 +1,18 @@
+package console;
+
+import utils.Utils;
+
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by Mohammed Aouf ZOUAG on 03/03/2016.
  * <p>
- * The Set version of the program.
+ * The LinkedList version of the program.
  */
-public class SetVersion {
+public class LinkedListVersion {
     /**
-     * The limit number of elements to be contained within the Set.
+     * The limit number of elements to be contained within the LinkedList.
      */
     private static int N;
     /**
@@ -20,17 +24,17 @@ public class SetVersion {
      */
     private static long totalRunTime;
     /**
-     * The list that will hold the random integers.
+     * The linked list that will hold the random integers.
      */
-    private static Set<Integer> set;
+    private static List<Integer> list;
 
     public static void main(String[] args) {
         getInput();
-        set = new TreeSet<>();
+        list = new LinkedList<>();
 
         getRandom();
-        System.out.println("Set elements: " + set + "\n\n");
-        System.out.println(String.format("Time elapsed to fill the set: %f seconds.",
+        System.out.println("Linked list elements: " + list + "\n\n");
+        System.out.println(String.format("Time elapsed to fill the linked list: %f seconds.",
                 totalRunTime / Math.pow(10, 9)));
 
         System.out.println(String.format("Total run time: %f seconds.\n\n",
@@ -56,19 +60,22 @@ public class SetVersion {
         int counter = 1;
         Map<Integer, Double> map = new TreeMap<>();
 
-        while (counter < N + 1) {
+        while (list.size() < N) {
             time = System.nanoTime();
             int number = ThreadLocalRandom.current()
                     .nextInt(0, M);
             if (Utils.isPrime(number)) {
-                set.add(number);
+                // Add & sort
+                list.add(number);
+                // TODO: good old sorting algorithm
+                Collections.sort(list);
 
                 time = System.nanoTime() - time;
                 totalRunTime += time;
                 map.put(counter, time / Math.pow(10, 9));
-
-                counter++;
             }
+
+            counter++;
         }
 
         printDashboardMap(map);
