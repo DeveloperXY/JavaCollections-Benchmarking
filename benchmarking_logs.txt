@@ -1,0 +1,36 @@
+----------------
+2016-03-06 20:53
+----------------
+Class :	<ArrayList>
+Generated numbers: [2, 31, 37, 41, 43, 53, 53, 59, 59, 79]
+Fill time: 0,000027 seconds.
+Sort time: 0,000038 seconds.
+Total run time: 0,000065 seconds.
+
+
+
+
+----------------
+2016-03-06 20:53
+----------------
+Class :	<LinkedList>
+Generated numbers: [0, 2, 2, 29, 37, 59, 71, 73, 73, 79]
+Fill time: 0,000059 seconds.
+Sort time: 0,000000 seconds.
+Total run time: 0,000059 seconds.
+
+
+
+
+----------------
+2016-03-06 20:53
+----------------
+Class :	<TreeSet>
+Generated numbers: [7, 11, 19, 31, 53, 59, 67, 71, 79, 97]
+Fill time: 0,000064 seconds.
+Sort time: 0,000000 seconds.
+Total run time: 0,000064 seconds.
+
+
+
+

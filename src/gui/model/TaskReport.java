@@ -2,10 +2,12 @@ package gui.model;
 
 import java.io.File;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -105,22 +107,23 @@ public class TaskReport {
      * @return a full report of this task describing all actions, all timings.
      */
     public String fullReport() {
+        String reportTime = time.format(
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+
         return new StringJoiner(System.lineSeparator())
-                .add(Stream.generate(() -> "-")
-                        .limit(time.toString().length())
-                        .flatMap(Stream::of)
-                        .findAny()
-                        .get())
-                .add(time.toString())
-                .add(Stream.generate(() -> "-")
-                        .limit(time.toString().length())
-                        .findFirst()
-                        .get())
-                .add(String.format("Class :\t%s", className.getSimpleName()))
+                .add(Stream.generate(() -> "-") // -----------------------
+                        .limit(reportTime.length())
+                        .collect(Collectors.joining("")))
+                .add(reportTime) // The report's date
+                .add(Stream.generate(() -> "-") // ----------------------
+                        .limit(reportTime.length())
+                        .collect(Collectors.joining("")))
+                .add(String.format("Class :\t<%s>", className.getSimpleName()))
                 .add("Generated numbers: " + generatedNumbers)
                 .add(String.format("Fill time: %f seconds.", fillTime))
                 .add(String.format("Sort time: %f seconds.", sortTime))
                 .add(String.format("Total run time: %f seconds.", totalRunTime))
+                .add(taskReportSeparator())
                 .toString();
     }
 

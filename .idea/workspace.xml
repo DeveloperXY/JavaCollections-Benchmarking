@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e58f75cf-d0e8-4ed2-9e89-076d38c3469c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JavaCollections-Benchmarking/gui/layout/main_window.fxml" afterPath="$PROJECT_DIR$/out/production/JavaCollections-Benchmarking/gui/layout/main_window.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/controllers/CenterController.java" afterPath="$PROJECT_DIR$/src/gui/controllers/CenterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/gui/controllers/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/layout/main_window.fxml" afterPath="$PROJECT_DIR$/src/gui/layout/main_window.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/model/TaskReport.java" afterPath="$PROJECT_DIR$/src/gui/model/TaskReport.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gui/tasks/SetTask.java" afterPath="$PROJECT_DIR$/src/gui/tasks/SetTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/Utils.java" afterPath="$PROJECT_DIR$/src/utils/Utils.java" />
     </list>
     <ignored path="JavaCollections-Benchmarking.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskReport.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskReport.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/model/TaskReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.36314362">
+              <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,12 +72,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SetTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SetTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/tasks/SetTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29268292">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,8 +163,8 @@
         <option value="$PROJECT_DIR$/src/gui/tasks/ArrayListTask.java" />
         <option value="$PROJECT_DIR$/src/gui/tasks/LinkedListTask.java" />
         <option value="$PROJECT_DIR$/src/gui/tasks/SetTask.java" />
-        <option value="$PROJECT_DIR$/src/gui/model/TaskReport.java" />
         <option value="$PROJECT_DIR$/benchmarking_logs.txt" />
+        <option value="$PROJECT_DIR$/src/gui/model/TaskReport.java" />
       </list>
     </option>
   </component>
@@ -909,12 +902,12 @@
       <workItem from="1457263158706" duration="144000" />
       <workItem from="1457263726701" duration="1031000" />
       <workItem from="1457264784302" duration="5271000" />
-      <workItem from="1457271835048" duration="21085000" />
+      <workItem from="1457271835048" duration="21773000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35224000" />
+    <option name="totallyTimeSpent" value="35912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1448" y="-8" width="1456" height="876" extended-state="6" />
@@ -1393,21 +1386,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/model/TaskReport.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/tasks/SetTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/tasks/SetTask.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/model/TaskReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29268292">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.36314362">
+          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
