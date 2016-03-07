@@ -91,53 +91,62 @@ public class CenterController {
      * Invoked when the user clicks on the "Run" button.
      */
     @FXML
-    private void onStart() throws ExecutionException, InterruptedException, IOException {
+    private void onStart() {
         statusArea.setText("Executing tasks...");
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         if (isInputValid()) {
-            // Create the 3 tasks
-            ArrayListTask arraylistTask = new ArrayListTask(N, M);
-            LinkedListTask linkedListTask = new LinkedListTask(N, M);
-            SetTask setTask = new SetTask(N, M);
 
-            FutureTask<TaskReport> futureArrayListTask = new FutureTask<>(arraylistTask);
-            FutureTask<TaskReport> futureLinkedListTask = new FutureTask<>(linkedListTask);
-            FutureTask<TaskReport> futureSetTask = new FutureTask<>(setTask);
+            try {
+                // Create the 3 tasks
+                ArrayListTask arraylistTask = new ArrayListTask(N, M);
+                LinkedListTask linkedListTask = new LinkedListTask(N, M);
+                SetTask setTask = new SetTask(N, M);
 
-            // Execute the tasks
-            ExecutorService executorService = Executors.newFixedThreadPool(3);
-            executorService.execute(futureArrayListTask);
-            executorService.execute(futureLinkedListTask);
-            executorService.execute(futureSetTask);
+                FutureTask<TaskReport> futureArrayListTask = new FutureTask<>(arraylistTask);
+                FutureTask<TaskReport> futureLinkedListTask = new FutureTask<>(linkedListTask);
+                FutureTask<TaskReport> futureSetTask = new FutureTask<>(setTask);
 
-            // Get their reports
-            TaskReport arraylistReport = futureArrayListTask.get();
-            TaskReport linkedlistReport = futureLinkedListTask.get();
-            TaskReport setReport = futureSetTask.get();
+                // Execute the tasks
+                executorService.execute(futureArrayListTask);
+                executorService.execute(futureLinkedListTask);
+                executorService.execute(futureSetTask);
 
-            // Add record to the TableView
-            Record record = new Record(arraylistReport.getTotalRunTime(),
-                    linkedlistReport.getTotalRunTime(),
-                    setReport.getTotalRunTime());
-            mListener.getRecords().add(record);
+                // Get their reports
+                TaskReport arraylistReport = futureArrayListTask.get();
+                System.out.println("OK1");
+                TaskReport linkedlistReport = futureLinkedListTask.get();
+                System.out.println("OK2");
+                TaskReport setReport = futureSetTask.get();
+                System.out.println("OK3");
 
-            // Scroll down to the last item after inserting it
-            recordTable.scrollTo(recordTable.getItems().size());
+                // Add record to the TableView
+                Record record = new Record(arraylistReport.getTotalRunTime(),
+                        linkedlistReport.getTotalRunTime(),
+                        setReport.getTotalRunTime());
+                mListener.getRecords().add(record);
 
-            // Show the reports
-            statusArea.setText(
-                    new StringJoiner("\n")
-                            .add(arraylistReport.miniReport())
-                            .add(TaskReport.taskReportSeparator())
-                            .add(linkedlistReport.miniReport())
-                            .add(TaskReport.taskReportSeparator())
-                            .add(setReport.miniReport())
-                            .toString());
+                // Scroll down to the last item after inserting it
+                recordTable.scrollTo(recordTable.getItems().size());
 
-            logTheReports(arraylistReport, linkedlistReport, setReport);
+                // Show the reports
+                statusArea.setText(
+                        new StringJoiner("\n")
+                                .add(arraylistReport.miniReport())
+                                .add(TaskReport.taskReportSeparator())
+                                .add(linkedlistReport.miniReport())
+                                .add(TaskReport.taskReportSeparator())
+                                .add(setReport.miniReport())
+                                .toString());
 
-            // Shut down the executor
-            executorService.shutdown();
+                logTheReports(arraylistReport, linkedlistReport, setReport);
+
+            } catch (InterruptedException | ExecutionException | IOException e) {
+                e.printStackTrace();
+            }
+            finally {
+                executorService.shutdown();
+            }
         }
     }
 
