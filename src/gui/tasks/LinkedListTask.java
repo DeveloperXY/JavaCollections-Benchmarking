@@ -82,8 +82,6 @@ public class LinkedListTask extends BaseTask<List<Integer>>
             counter++;
         }
 
-        System.out.println("SORTED: " + list);
-
         return fillTime / Math.pow(10, 9);
     }
 }

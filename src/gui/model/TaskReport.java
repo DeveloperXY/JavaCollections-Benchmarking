@@ -109,18 +109,33 @@ public class TaskReport {
                 DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
 
         return new StringJoiner(System.lineSeparator())
-                .add(Stream.generate(() -> "-") // -----------------------
+                .add(Stream.generate(() -> "*") // -----------------------
                         .limit(reportTime.length())
                         .collect(Collectors.joining("")))
                 .add(reportTime) // The report's date
-                .add(Stream.generate(() -> "-") // ----------------------
+                .add(Stream.generate(() -> "*") // ----------------------
                         .limit(reportTime.length())
                         .collect(Collectors.joining("")))
                 .add(String.format("Class :\t<%s>", className.getSimpleName()))
                 .add("Generated numbers: " + generatedNumbers)
+                .add(Stream.generate(() -> "-")
+                        .limit(46)
+                        .collect(Collectors.joining("")))
+                .add(timingMap.entrySet()
+                        .stream()
+                        .map(e -> String.format(
+                                "Iteration %d : Time elapsed: %f seconds.", e.getKey(), e.getValue()))
+                        .collect(Collectors.joining(System.lineSeparator())))
+                .add(Stream.generate(() -> "-")
+                        .limit(46)
+                        .collect(Collectors.joining("")))
                 .add(String.format("Fill time: %f seconds.", fillTime))
                 .add(String.format("Sort time: %f seconds.", sortTime))
                 .add(String.format("Total run time: %f seconds.", totalRunTime))
+                .add(taskReportSeparator())
+                .add(Stream.generate(() -> "@")
+                        .limit(50)
+                        .collect(Collectors.joining("")))
                 .add(taskReportSeparator())
                 .toString();
     }

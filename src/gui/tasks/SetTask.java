@@ -31,15 +31,11 @@ public class SetTask extends BaseTask<Set<Integer>>
         Map<Integer, Double> map = new TreeMap<>();
         Set<Integer> set = new TreeSet<>();
 
-        System.out.println("OK5 - before");
-
         // 1- Calculate the fill time
         fillTime = getFillTime(set, map);
 
         // 2- Calculate the total run time
         totalRunTime = fillTime + sortTime;
-
-        System.out.println("OK5 - after, never reached.");
 
         return new TaskReport(
                 LocalDateTime.now(),
