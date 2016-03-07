@@ -180,6 +180,10 @@ public class CenterController {
             try {
                 // Try to convert the content of the nField
                 N = Integer.parseInt(nString);
+
+                if (N <= 0)
+                    dialogMessage += "The value of 'N' should be greater or equal to 1.\n";
+
             } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "N must be an integer.\n";
@@ -188,14 +192,15 @@ public class CenterController {
             try {
                 // Try to convert the content of the mField
                 M = Integer.parseInt(mString);
+
+                if (M <= 0)
+                    dialogMessage += "The value of 'M' should be greater or equal to 1.";
+
             } catch (NumberFormatException e) {
                 // Invalid format
                 dialogMessage += "M must be an integer.\n";
             }
         }
-
-        if (M == 0)
-            dialogMessage += "The value of 'M' should be different than 0.";
 
         if (!"".equals(dialogMessage)) {
             // Something is wrong with the input, show an error dialog.
