@@ -49,7 +49,7 @@ public class SetTask extends BaseTask<Set<Integer>>
 
     /**
      * @param set in question
-     * @param map        where the timing of each iteration will be saved.
+     * @param map where the timing of each iteration will be saved.
      * @return the time needed to fill the collection.
      */
     public double getFillTime(Set<Integer> set, Map<Integer, Double> map) {

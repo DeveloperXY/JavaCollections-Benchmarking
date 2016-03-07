@@ -114,11 +114,8 @@ public class CenterController {
 
                 // Get their reports
                 TaskReport arraylistReport = futureArrayListTask.get();
-                System.out.println("OK1");
                 TaskReport linkedlistReport = futureLinkedListTask.get();
-                System.out.println("OK2");
                 TaskReport setReport = futureSetTask.get();
-                System.out.println("OK3");
 
                 // Add record to the TableView
                 Record record = new Record(arraylistReport.getTotalRunTime(),
@@ -143,8 +140,7 @@ public class CenterController {
 
             } catch (InterruptedException | ExecutionException | IOException e) {
                 e.printStackTrace();
-            }
-            finally {
+            } finally {
                 executorService.shutdown();
             }
         }
