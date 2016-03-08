@@ -44,7 +44,7 @@ public class MainController {
      * Closes the app, when clicking on the "Close" menu item.
      */
     @FXML
-    private void onClose() {
+    public void onClose() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.initOwner(mStage);
         alert.setTitle("Quit");

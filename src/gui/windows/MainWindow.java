@@ -33,6 +33,8 @@ public class MainWindow extends Application {
      */
     private ObservableList<Record> mRecords;
 
+    private MainController mainController;
+
     @Override
     public void start(Stage stage) throws Exception {
         mPrimaryStage = stage;
@@ -47,8 +49,13 @@ public class MainWindow extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/gui/layout/main_window.fxml"));
         mBorderPane = loader.load();
-        MainController mainController = loader.getController();
+        mainController = loader.getController();
         mainController.setOwnerStage(mPrimaryStage);
+
+        mPrimaryStage.setOnCloseRequest(e -> {
+            e.consume();
+            mainController.onClose();
+        });
     }
 
     private void addCenterLayout() throws IOException {
